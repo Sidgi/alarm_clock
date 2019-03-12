@@ -1,0 +1,70 @@
+.main{
+	display: flex-inline;
+	justify-content: center;
+	padding: 300px;
+	align-content: center;  
+	border: red solid 3px;
+	border-radius: 50%;
+	animation: backgroundBody 10s ease-in-out infinite ; 
+	
+}
+.outer{
+	display: flex;
+	justify-content: center;
+	/*border:solid black; */
+}
+
+.outer1{
+	display: flex;
+	justify-content: center;
+	/*border:solid black; */
+
+}
+.child1{
+	/*border:solid black; */
+	/*flex: 1;*/
+	/*height: 50px;*/
+}
+.child{
+	/*border:solid black; */
+	/*flex:1;*/
+	/*height: 50px;*/
+}
+input{
+	font-size: 25pt;
+	margin: 20px;
+}
+
+button {
+	font-weight: bold;
+	font-size: 15pt;
+}
+.submit{
+	background-color: red;
+	border-radius: 20%;
+	cursor: pointer;
+}
+.stop{
+	background-color: blue;
+	border-radius: 20%;
+	cursor: pointer;
+}
+body{
+	background: url(../images/spaceBody.gif); 
+}
+#alarmTime{
+	border-radius: 30px;
+}
+
+
+
+@keyframes backgroundBody{
+ from{
+     background: url(../images/space.gif); 
+     background-size: 300px;
+ }
+ to{
+      background: url(../images/space2.gif) 
+ }
+  
+}

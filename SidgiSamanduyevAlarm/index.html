@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>Alarm</title>
+</head>
+<body >
+	<div class="main">
+		<div class="outer">
+<input class="child" id="alarmTime" type="time" name="alarmTime">
+ <button class="child" onclick="checkTime()">check time</button>
+</div>
+<div class="outer1">
+<input class="child1 submit" onclick="intervalMain()" type="button" name="submitAlarm" value="set alarm" >
+<input class="child1 stop" onclick="stopMusic()" type="button" name="stopAlarm" value="stop alarm" >
+  </div>
+</div>
+<script type="text/javascript">
+
+
+
+var sound = new Audio('sounds/alarmSound.mp3');
+var intr;
+function checkTime(){
+	alert(document.getElementById('alarmTime').value);
+	 var today = new Date();
+	  alert(today.getHours() + ":" +today.getMinutes());
+}
+
+function stopMusic(){
+	sound.pause();
+	document.getElementById('alarmTime').value = ' ';
+	 clearInterval();
+}
+
+function intervalMain(){
+	var alarmTime = document.getElementById('alarmTime').value;
+	setInterval(function(){
+		 var today = new Date();
+
+		  if (today.getHours() <10){
+		 	var newHours = "0"+ today.getHours();
+		 }
+		 else{
+		 	newHours = today.getHours();
+		 }
+
+		 if (today.getMinutes() <10){
+		 	var newMinutes = "0"+ today.getMinutes();
+		 }
+		 else{
+		 	newMinutes = today.getMinutes();
+		 }
+		 var timeCurrent = newHours +':'+ newMinutes;
+
+		if (timeCurrent == document.getElementById('alarmTime').value) {
+				sound.play();
+
+				}
+	},1000);
+}
+
+/////Don't need :)
+///transform european time to am/ pm
+// var ampm;
+// var hours = today.getHours();
+// if (hours>12){
+// 	hours = hours-12;
+// 	ampm = 'pm';
+// }
+// else {
+// 	hours = hours;
+// 	ampm = 'am';
+// }
+// var minutes = today.getMinutes();
+// var sec  = today.getSeconds();
+// console.log(hours, minutes, sec, ampm);
+// console.log(today);
+// function time() {
+// alert(document.getElementById('alarmTime').value);
+// }
+</script>
+</body>
+</html>
